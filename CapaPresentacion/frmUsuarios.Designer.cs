@@ -339,7 +339,7 @@
             dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.Black;
             this.dgvdata.RowsDefaultCellStyle = dataGridViewCellStyle3;
             this.dgvdata.RowTemplate.Height = 28;
-            this.dgvdata.Size = new System.Drawing.Size(1023, 397);
+            this.dgvdata.Size = new System.Drawing.Size(1035, 397);
             this.dgvdata.TabIndex = 19;
             // 
             // label4
