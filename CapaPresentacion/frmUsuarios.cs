@@ -8,6 +8,11 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
+using CapaPresentacion.Utilidades;
+using CapaEntidad;
+using CapaNegocio;
+
+
 namespace CapaPresentacion
 {
     public partial class frmUsuarios : Form
@@ -49,6 +54,27 @@ namespace CapaPresentacion
 
         private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
+
+        }
+
+        private void frmUsuarios_Load(object sender, EventArgs e)
+        {
+            cboestado.Items.Add(new OpcionCombo() { Valor = 1, Texto = "Activo" });
+            cboestado.Items.Add(new OpcionCombo() { Valor = 0, Texto = "No Activo" });
+            cboestado.DisplayMember = "Texto";
+            cboestado.ValueMember = "Valor";
+            cboestado.SelectedIndex = 0;
+
+            List<Rol> listRol = new CN_Rol().Listar();
+
+            foreach (Rol item in listRol)
+            {
+                cborol.Items.Add(new OpcionCombo() { Valor = item.IdRol, Texto = item.Descripcion });
+                cborol.DisplayMember = "Texto";
+                cborol.ValueMember = "Valor";
+                cborol.SelectedIndex = 0;
+            }
+
 
         }
     }
