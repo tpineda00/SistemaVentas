@@ -17,5 +17,84 @@ namespace CapaNegocio
         {
             return objcd_Usuario.Listar();
         }
+
+        public int Registrar(Usuario obj, out string Mensaje)
+        {
+
+            Mensaje = string.Empty;
+
+            if (obj.NombreCompleto == "")
+            {
+                Mensaje = "El nombre del usuario no puede estar vacio\n";
+            }
+            if (obj.Documento == "")
+            {
+                Mensaje = "El documento del usuario no puede estar vacio\n";
+            }
+            if (obj.Correo == "")
+            {
+                Mensaje = "El correo del usuario no puede estar vacio\n";
+            }
+            if (obj.Clave == "")
+            {
+                Mensaje = "La clave del usuario no puede estar vacia\n";
+            }
+            if (obj.oRol.IdRol == 0)
+            {
+                Mensaje = "Debe seleccionar un rol para el usuario\n";
+            }
+
+            if (Mensaje != string.Empty)
+            {
+                return 0;
+            }
+            else
+            {
+
+                return objcd_Usuario.Registrar(obj, out Mensaje);
+            }
+        }
+        public Boolean Editar(Usuario obj, out string Mensaje)
+        {
+
+            Mensaje = string.Empty;
+
+            if (obj.NombreCompleto == "")
+            {
+                Mensaje = "El nombre del usuario no puede estar vacio\n";
+            }
+            if (obj.Documento == "")
+            {
+                Mensaje = "El documento del usuario no puede estar vacio\n";
+            }
+            if (obj.Correo == "")
+            {
+                Mensaje = "El correo del usuario no puede estar vacio\n";
+            }
+            if (obj.Clave == "")
+            {
+                Mensaje = "La clave del usuario no puede estar vacia\n";
+            }
+            if (obj.oRol.IdRol == 0)
+            {
+                Mensaje = "Debe seleccionar un rol para el usuario\n";
+            }
+
+            if (Mensaje != string.Empty)
+            {
+                return false;
+            }
+            else
+            { return objcd_Usuario.Editar(obj, out Mensaje); }
+        }
+
+
+
+        public Boolean Eliminar(Usuario obj, out string Mensaje)
+        {
+            return objcd_Usuario.Eliminar(obj, out Mensaje);
+        }
+
+
     }
 }
