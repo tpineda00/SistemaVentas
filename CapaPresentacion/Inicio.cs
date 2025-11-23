@@ -41,6 +41,8 @@ namespace CapaPresentacion
 
 
             lblusuario.Text = usuarioActual.NombreCompleto;
+            timer1.Start();
+
         }
 
         private void contenedor_Paint(object sender, PaintEventArgs e)
@@ -135,6 +137,17 @@ namespace CapaPresentacion
         private void menureportes_Click(object sender, EventArgs e)
         {
             AbrirFormulario((IconMenuItem)sender, new frmReportes());
+
+        }
+
+        private void label2_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void timer1_Tick(object sender, EventArgs e)
+        {
+            label2.Text = DateTime.Now.ToString("hh:mm:ss tt");
 
         }
     }
