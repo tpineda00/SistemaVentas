@@ -27,9 +27,6 @@ namespace CapaPresentacion
             cboestado.DisplayMember = "Texto";
             cboestado.ValueMember = "Valor";
             cboestado.SelectedIndex = 0;
-
-            List<Rol> listRol = new CN_Rol().Listar();
-
           
 
             foreach (DataGridViewColumn columna in dgvdata.Columns)
