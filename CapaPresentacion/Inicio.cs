@@ -150,5 +150,11 @@ namespace CapaPresentacion
             label2.Text = DateTime.Now.ToString("hh:mm:ss tt");
 
         }
+
+        private void submenunegocio_Click(object sender, EventArgs e)
+        {
+            AbrirFormulario(menumantenedor, new frmNegocio());
+
+        }
     }
 }
