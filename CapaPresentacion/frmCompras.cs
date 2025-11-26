@@ -349,5 +349,10 @@ namespace CapaPresentacion
             //
 
         }
+
+        private void txtcodproducto_TextChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }
