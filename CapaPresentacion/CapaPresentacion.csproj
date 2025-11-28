@@ -117,6 +117,12 @@
     <Compile Include="frmCompras.Designer.cs">
       <DependentUpon>frmCompras.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmDepositoDistribuido.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmDepositoDistribuido.Designer.cs">
+      <DependentUpon>frmDepositoDistribuido.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmDetalleCompra.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -183,6 +189,12 @@
     <Compile Include="Modales\mdCliente.Designer.cs">
       <DependentUpon>mdCliente.cs</DependentUpon>
     </Compile>
+    <Compile Include="Modales\mdCuentaBancaria.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Modales\mdCuentaBancaria.Designer.cs">
+      <DependentUpon>mdCuentaBancaria.cs</DependentUpon>
+    </Compile>
     <Compile Include="Modales\mdProducto.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -206,6 +218,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="frmCompras.resx">
       <DependentUpon>frmCompras.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmDepositoDistribuido.resx">
+      <DependentUpon>frmDepositoDistribuido.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmDetalleCompra.resx">
       <DependentUpon>frmDetalleCompra.cs</DependentUpon>
@@ -236,6 +251,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Modales\mdCliente.resx">
       <DependentUpon>mdCliente.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Modales\mdCuentaBancaria.resx">
+      <DependentUpon>mdCuentaBancaria.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Modales\mdProducto.resx">
       <DependentUpon>mdProducto.cs</DependentUpon>

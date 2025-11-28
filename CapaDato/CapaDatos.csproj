@@ -45,6 +45,9 @@
     <Compile Include="CD_Categoria.cs" />
     <Compile Include="CD_Cliente.cs" />
     <Compile Include="CD_Compra.cs" />
+    <Compile Include="CD_CuentaBancaria.cs" />
+    <Compile Include="CD_Deposito.cs" />
+    <Compile Include="CD_MovimientoBancario.cs" />
     <Compile Include="CD_Negocio.cs" />
     <Compile Include="CD_Permiso.cs" />
     <Compile Include="CD_Producto.cs" />

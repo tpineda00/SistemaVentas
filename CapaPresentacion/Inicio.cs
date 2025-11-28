@@ -31,7 +31,7 @@ namespace CapaPresentacion
 
             foreach (IconMenuItem iconmenu in Menu.Items)
             {
-               bool encontrado = listaPermisos.Any(m => m.NombreMenu == iconmenu.Name);
+                bool encontrado = listaPermisos.Any(m => m.NombreMenu == iconmenu.Name);
                 if (encontrado == false)
                 {
                     iconmenu.Visible = false;
@@ -156,5 +156,41 @@ namespace CapaPresentacion
             AbrirFormulario(menumantenedor, new frmNegocio());
 
         }
+
+        private void bancosToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+        }
+
+        private void Banco_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void Menu_ItemClicked(object sender, ToolStripItemClickedEventArgs e)
+        {
+
+        }
+
+        private void bancos_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void Bancos_Click_1(object sender, EventArgs e)
+        {
+            AbrirFormulario(menureportes, new frmDepositoDistribuido());
+
+        }
+
+        private void iconMenuItem7_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void menuventas_Click(object sender, EventArgs e)
+        {
+
+        }
     }
+
 }

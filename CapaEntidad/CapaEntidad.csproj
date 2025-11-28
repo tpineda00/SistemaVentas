@@ -41,12 +41,19 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Banco.cs" />
     <Compile Include="Categoria.cs" />
     <Compile Include="Cliente.cs" />
     <Compile Include="Compra.cs" />
+    <Compile Include="CuentaBancaria.cs" />
+    <Compile Include="DepositoBancario.cs" />
+    <Compile Include="DepositoDetalle.cs" />
+    <Compile Include="DetalleDeposito.cs" />
     <Compile Include="Detalle_Compra.cs" />
     <Compile Include="Detalle_Venta.cs" />
+    <Compile Include="MovimientoBancario.cs" />
     <Compile Include="Negocio.cs" />
+    <Compile Include="PagoProveedor.cs" />
     <Compile Include="Permiso.cs" />
     <Compile Include="Producto.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
