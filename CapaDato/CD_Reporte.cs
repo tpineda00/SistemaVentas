@@ -1,16 +1,17 @@
-﻿using System;
+﻿using CapaEntidad;
+using System;
 using System.Collections.Generic;
 using System.Data;
 using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using CapaEntidad;
 
 namespace CapaDato
 {
     public class CD_Reporte
     {
+
         public List<ReporteCompra> Compra(string fechainicio, string fechafin, int idproveedor)
         {
             List<ReporteCompra> lista = new List<ReporteCompra>();
@@ -20,12 +21,11 @@ namespace CapaDato
                 try
                 {
                     StringBuilder query = new StringBuilder();
-                    SqlCommand cmd = new SqlCommand("sp_ReporteCompras", oconexion);
-                    cmd.CommandType = CommandType.StoredProcedure;
-
+                    SqlCommand cmd = new SqlCommand("sp_ReporteCompras", oconexion);                
                     cmd.Parameters.AddWithValue("fechainicio", fechainicio);
                     cmd.Parameters.AddWithValue("fechafin", fechafin);
                     cmd.Parameters.AddWithValue("idproveedor", idproveedor);
+                    cmd.CommandType = CommandType.StoredProcedure;
 
                     oconexion.Open();
 
@@ -63,6 +63,8 @@ namespace CapaDato
         }
 
 
+
+
         public List<ReporteVenta> Venta(string fechainicio, string fechafin)
         {
             List<ReporteVenta> lista = new List<ReporteVenta>();
@@ -72,12 +74,10 @@ namespace CapaDato
                 try
                 {
                     StringBuilder query = new StringBuilder(); // ← AÑADIDO
-
                     SqlCommand cmd = new SqlCommand("sp_ReporteVentas", oconexion);
-                    cmd.CommandType = CommandType.StoredProcedure;
-
                     cmd.Parameters.AddWithValue("fechainicio", fechainicio);
                     cmd.Parameters.AddWithValue("fechafin", fechafin);
+                    cmd.CommandType = CommandType.StoredProcedure;
 
                     oconexion.Open();
 
@@ -113,11 +113,8 @@ namespace CapaDato
             return lista;
         }
 
-        public List<ReporteVenta> Venta(string fechainicio, string fechafin, int idproveedor)
-        {
-            throw new NotImplementedException();
-        }
+
+
+
     }
 }
-
-

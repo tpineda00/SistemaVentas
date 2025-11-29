@@ -134,11 +134,11 @@ namespace CapaPresentacion
 
         }
 
-        private void menureportes_Click(object sender, EventArgs e)
-        {
-            AbrirFormulario((IconMenuItem)sender, new frmReportes());
+        //private void menureportes_Click(object sender, EventArgs e)
+        //{
+        //    AbrirFormulario((IconMenuItem)sender, new frmReportes());
 
-        }
+        //}
 
         private void label2_Click(object sender, EventArgs e)
         {
@@ -184,12 +184,17 @@ namespace CapaPresentacion
 
         private void iconMenuItem7_Click(object sender, EventArgs e)
         {
-
+            AbrirFormulario(menumantenedor, new frmReporteCompras());
         }
 
-        private void menuventas_Click(object sender, EventArgs e)
-        {
+        //private void menuventas_Click(object sender, EventArgs e)
+        //{
 
+        //}
+
+        private void submenureporteventas_Click(object sender, EventArgs e)
+        {
+            AbrirFormulario(menumantenedor, new frmReporteVentas());
         }
     }
 

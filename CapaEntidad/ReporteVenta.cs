@@ -8,9 +8,8 @@ namespace CapaEntidad
 {
     public class ReporteVenta
     {
-
         public string FechaRegistro { get; set; }
-        public string TipoDocumento { get; set; }   
+        public string TipoDocumento { get; set; }
         public string NumeroDocumento { get; set; }
         public string MontoTotal { get; set; }
         public string UsuarioRegistro { get; set; }
@@ -22,5 +21,6 @@ namespace CapaEntidad
         public string PrecioVenta { get; set; }
         public string Cantidad { get; set; }
         public string SubTotal { get; set; }
+
     }
 }
