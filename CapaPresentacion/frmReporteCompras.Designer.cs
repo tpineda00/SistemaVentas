@@ -359,6 +359,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1139, 600);
+            this.Controls.Add(this.txtfechainicio);
             this.Controls.Add(this.btnexportar);
             this.Controls.Add(this.btnlimpiarbuscador);
             this.Controls.Add(this.btnbuscar);
@@ -372,7 +373,6 @@
             this.Controls.Add(this.cboproveedor);
             this.Controls.Add(this.txtfechafin);
             this.Controls.Add(this.label2);
-            this.Controls.Add(this.txtfechainicio);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label4);
