@@ -13,11 +13,13 @@ namespace CapaPresentacion.Modales
         public mdCuentaBancaria()
         {
             InitializeComponent();
+            dgvdata.AutoGenerateColumns = false;
         }
 
         private void mdCuentaBancaria_Load(object sender, EventArgs e)
         {
             dgvdata.DataSource = new CN_CuentaBancaria().Listar();
+            
         }
 
         private void dgvCuentas_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
@@ -31,6 +33,18 @@ namespace CapaPresentacion.Modales
             {
                 _Cuenta = dgvdata.Rows[e.RowIndex].DataBoundItem as CuentaBancaria;
                 this.DialogResult = DialogResult.OK;
+            }
+        }
+
+        private void dgvdata_CellFormatting(object sender, DataGridViewCellFormattingEventArgs e)
+        {
+            if (dgvdata.Columns[e.ColumnIndex].Name == "Banco")
+            {
+                var cuenta = dgvdata.Rows[e.RowIndex].DataBoundItem as CuentaBancaria;
+                if (cuenta != null && cuenta.oBanco != null)
+                {
+                    e.Value = cuenta.oBanco.NombreBanco;
+                }
             }
         }
     }

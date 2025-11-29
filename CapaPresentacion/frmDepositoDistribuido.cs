@@ -37,6 +37,7 @@ namespace CapaPresentacion
                         modal._Cuenta.oBanco.NombreBanco + " - " + modal._Cuenta.NumeroCuenta,
                         modal._Cuenta.Saldo,
                         "0.00");
+                    CalcularTotales();
                 }
             }
         }
@@ -138,5 +139,17 @@ namespace CapaPresentacion
             dgvDetalleDeposito.Rows.Clear();
         }
 
+        private void lblTotalDistribuido_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void dgvDetalleDeposito_CellEndEdit(object sender, DataGridViewCellEventArgs e)
+        {
+            if (e.ColumnIndex == dgvDetalleDeposito.Columns["Monto"].Index)
+            {
+                CalcularTotales();
+            }
+        }
     }
 }
