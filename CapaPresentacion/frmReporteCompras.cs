@@ -29,13 +29,13 @@ namespace CapaPresentacion
 
             List<Proveedor> lista = new CN_Proveedor().Listar();
 
-            cboproveedor.Items.Add(new OpcionCombo() { Valor = 0, Texto = "Todos" });
+            cboproveedor.Items.Add(new OpcionCombo() { Valor = 0, Texto = "TODOS" });
             foreach (Proveedor item in lista)
             {
                 cboproveedor.Items.Add(new OpcionCombo() { Valor = item.IdProveedor, Texto = item.RazonSocial });
             }
             cboproveedor.DisplayMember = "Texto";
-            cboproveedor.ValueMember = "Vaor";
+            cboproveedor.ValueMember = "Valor";
             cboproveedor.SelectedIndex = 0;
 
 
@@ -44,7 +44,7 @@ namespace CapaPresentacion
                 cbobusqueda.Items.Add(new OpcionCombo() { Valor = columna.Name, Texto = columna.HeaderText });
             }
             cbobusqueda.DisplayMember = "Texto";
-            cbobusqueda.ValueMember = "Vaor";
+            cbobusqueda.ValueMember = "Valor";
             cbobusqueda.SelectedIndex = 0;
 
         }
@@ -52,15 +52,50 @@ namespace CapaPresentacion
         private void btnbuscarresultado_Click(object sender, EventArgs e)
         {
 
-            int idproveedor = Convert.ToInt32(((OpcionCombo)cboproveedor.SelectedItem).Valor.ToString());
+            //int idproveedor = Convert.ToInt32(((OpcionCombo)cboproveedor.SelectedItem).Valor.ToString());
 
-            List<ReporteCompra> lista = new List<ReporteCompra>();
+            //List<ReporteCompra> lista = new List<ReporteCompra>();
 
-            lista = new CN_Reporte().Compra(
-                txtfechainicio.Value.ToString(),
-                txtfechafin.Value.ToString(),
+            //lista = new CN_Reporte().Compra(
+            //    txtfechainicio.Value.ToString(),
+            //    txtfechafin.Value.ToString(),
+            //    idproveedor
+            //    );
+
+            //dgvdata.Rows.Clear();
+
+            //foreach (ReporteCompra rc in lista)
+            //{
+            //    dgvdata.Rows.Add(new object[]
+            //    {
+            //        rc.FechaRegistro,
+            //        rc.TipoDocumento,
+            //        rc.NumeroDocumento,
+            //        rc.MontoTotal,
+            //        rc.UsuarioRegistro,
+            //        rc.DocumentoProveedor,
+            //        rc.RazonSocial,
+            //        rc.CodigoProducto,
+            //        rc.NombreProducto,
+            //        rc.Categoria,
+            //        rc.PrecioCompra,
+            //        rc.PrecioVenta,
+            //        rc.Cantidad,
+            //        rc.SubTotal
+            //    });
+
+
+            //}
+            int idproveedor = Convert.ToInt32(((OpcionCombo)cboproveedor.SelectedItem).Valor);
+
+            string fechaInicio = txtfechainicio.Value.ToString("dd/MM/yyyy");
+            string fechaFin = txtfechafin.Value.ToString("dd/MM/yyyy");
+
+            List<ReporteCompra> lista = new CN_Reporte().Compra(
+                fechaInicio,
+                fechaFin,
                 idproveedor
-                );
+            );
 
             dgvdata.Rows.Clear();
 
@@ -68,23 +103,21 @@ namespace CapaPresentacion
             {
                 dgvdata.Rows.Add(new object[]
                 {
-                    rc.FechaRegistro,
-                    rc.TipoDocumento,
-                    rc.NumeroDocumento,
-                    rc.MontoTotal,
-                    rc.UsuarioRegistro,
-                    rc.DocumentoProveedor,
-                    rc.RazonSocial,
-                    rc.CodigoProducto,
-                    rc.NombreProducto,
-                    rc.Categoria,
-                    rc.PrecioCompra,
-                    rc.PrecioVenta,
-                    rc.Cantidad,
-                    rc.SubTotal
+            rc.FechaRegistro,
+            rc.TipoDocumento,
+            rc.NumeroDocumento,
+            rc.MontoTotal,
+            rc.UsuarioRegistro,
+            rc.DocumentoProveedor,
+            rc.RazonSocial,
+            rc.CodigoProducto,
+            rc.NombreProducto,
+            rc.Categoria,
+            rc.PrecioCompra,
+            rc.PrecioVenta,
+            rc.Cantidad,
+            rc.SubTotal
                 });
-
-
             }
         }
 
@@ -162,6 +195,8 @@ namespace CapaPresentacion
                     else
                         row.Visible = false;
                 }
+                
+             
             }
         }
 
@@ -172,6 +207,11 @@ namespace CapaPresentacion
             {
                 row.Visible = true;
             }
+        }
+
+        private void dgvdata_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
         }
     }
 }

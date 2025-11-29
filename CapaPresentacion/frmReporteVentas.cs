@@ -28,15 +28,16 @@ namespace CapaPresentacion
                 cbobusqueda.Items.Add(new OpcionCombo() { Valor = columna.Name, Texto = columna.HeaderText });
             }
             cbobusqueda.DisplayMember = "Texto";
-            cbobusqueda.ValueMember = "Vaor";
+            cbobusqueda.ValueMember = "Valor";
             cbobusqueda.SelectedIndex = 0;
         }
 
         private void btnbuscarresultado_Click(object sender, EventArgs e)
         {
-            List<ReporteVenta> lista = new List<ReporteVenta>();
+            string fechaInicio = txtfechainicio.Value.ToString("dd/MM/yyyy");
+            string fechaFin = txtfechafin.Value.ToString("dd/MM/yyyy");
 
-            lista = new CN_Reporte().Venta(txtfechainicio.Value.ToString(),txtfechafin.Value.ToString());
+            List<ReporteVenta> lista = new CN_Reporte().Venta(fechaInicio, fechaFin);
 
             dgvdata.Rows.Clear();
 
@@ -44,22 +45,20 @@ namespace CapaPresentacion
             {
                 dgvdata.Rows.Add(new object[]
                 {
-                    rv.FechaRegistro,
-                    rv.TipoDocumento,
-                    rv.NumeroDocumento,
-                    rv.MontoTotal,
-                    rv.UsuarioRegistro,
-                    rv.DocumentoCliente,
-                    rv.NombreCliente,
-                    rv.CodigoProducto,
-                    rv.NombreProducto,
-                    rv.Categoria,
-                    rv.PrecioVenta,
-                    rv.Cantidad,
-                    rv.SubTotal
+            rv.FechaRegistro,
+            rv.TipoDocumento,
+            rv.NumeroDocumento,
+            rv.MontoTotal,
+            rv.UsuarioRegistro,
+            rv.DocumentoCliente,
+            rv.NombreCliente,
+            rv.CodigoProducto,
+            rv.NombreProducto,
+            rv.Categoria,
+            rv.PrecioVenta,
+            rv.Cantidad,
+            rv.SubTotal
                 });
-
-
             }
         }
 

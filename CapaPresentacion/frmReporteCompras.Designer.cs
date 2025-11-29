@@ -194,6 +194,7 @@
             this.dgvdata.RowHeadersWidth = 51;
             this.dgvdata.Size = new System.Drawing.Size(1090, 409);
             this.dgvdata.TabIndex = 51;
+            this.dgvdata.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvdata_CellContentClick);
             // 
             // FechaRegistro
             // 
